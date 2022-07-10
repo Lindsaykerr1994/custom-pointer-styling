@@ -1,0 +1,68 @@
+:root {
+    --secondary-color: rgb(15, 15, 15);
+    --secondary-tint: rgba(15, 15, 15, 0.15);
+    --primary-color: rgb(240,240,240);
+    --spacer: 10px;
+    --cursor-size: 6px;
+    --border-size: 2px;
+}
+[data-theme="dark"]{
+    --primary-color: rgb(15,15,15);
+    --secondary-color: rgb(240,240,240);
+    --secondary-tint: rgba(240,240,240, 0.15);
+}
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: "Rubik Mono One", sans-serif;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+}
+
+#outer-body, #inner-body {
+    border: var(--border-size) solid var(--secondary-color);
+    margin:  var(--spacer);
+    text-align: center;
+}
+
+#outer-body {
+    max-width: 25vw;
+}
+#inner-body {
+    position: relative;
+    padding: calc(var(--spacer) * 8);
+}
+
+#toggle-button {
+    position: absolute;
+    top: var(--spacer);
+    right: var(--spacer);
+    font-size: 1.5em;   
+}
+#toggle-button > * {
+    transform: rotate(0deg);
+    transition-duration: 2s;
+}
+#toggle-button:hover > * {
+    transform: rotate(180deg);
+}
+.d-none {
+    display: none;
+}
+#cursor {    
+    border-radius: 50%;
+    border: var(--border-size) solid var(--secondary-color);
+    background-color: var(--secondary-tint);
+    position: absolute;
+}
+#inner-cursor {
+    background-color: var(--secondary-color);
+    height: var(--cursor-size);
+    width: var(--cursor-size);
+    margin: var(--cursor-size);
+    border-radius: inherit;
+}
